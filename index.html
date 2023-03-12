@@ -68,7 +68,55 @@
     </section>
   </main>
 </div>
+  
+<div class="wrapper row3"  style="background-color: lightgray;">
+  <main class="hoc container clear">
+    <section>
+      <div>
+        <h6 class="heading">Competition Outline</h6>
+        <p>
+          <h5 class="heading">Dataset</h6>
+            DocEdit dataset provides pairs of document images and user edit requests along with the ground truth edit command. Each edit request is mapped to an executable command that can be simulated in a real-world document editing software. We present 17K scanned PDF documents comprising edits performed on publicly available PDF documents. The dataset has a diverse mix of edit operations (add, delete, modify, split, merge, replace, move, copy) and reference types (direct, object referring, text referring) from the users.
+        </p>
+       <h5 class="heading">Evaluation</h6>
+        <p>
+          On March, 2023, we will release the test datasets, and by March 15th, 2023 competition participants are expected submit the following:
+          <br> 1. Predictions on each test dataset
+          <br> 2. A short but complete system description
+         <br> The organizers will tabulate the results for each task and present it at ICDAR 2023 in San Jose, California, USA . Note that you do not need to attend ICDAR 2023 to participate in this competition.
+        </p>
+      
+      The tasks and sub-tasks considered in this competition are
+    <h5 class="heading">Tasks</h6>
+        <p>
+          <ul>
+              <li>Sub-task 1: Edit Command Generation: We will report exact match accuracy (EM %), Word overlap F1 and ROUGE score. We will also compare accuracy for action, component, attribute, initial state and final state tokens by matching the presence of tokens in ground truth prediction in predicted token sequence. </li>
+              <li>Sub-task 2: Bounding Box RoI prediction: We will evaluate bounding box prediction in terms of top-1 accuracy (%). Specifically, if the Jaccard overlap between the predicted region and the ground-truth box is above 0.5, the prediction is regarded correct.</li>
+          </ul>
+          <br>Each subtask is evaluated in isolation, meaning that systems have access to the ideal output (i.e. Ground Truth) of previous subtasks. 
+        </p>
 
+    <h5 class="heading">Competition Rules</h6>
+      <p>
+       <ul>
+  
+<li>The competition is open for participants from both industry and academia. The competition is open for both students and professionals who want to make a contribution to the field of chart recognition. Below we describe the rules for our competition.</li>
+<li>lEach participant team can include up to a maximum of 10 people from one or more affiliations. For the sake of fairness to smaller research groups, we will not allow bigger research groups to participate as a single team.</li>
+<li>One person can only participate on one team. Mentors included. No exceptions.</li>
+<li>Winners teams will have certificates listing the names of their members in the exact format and order as they were registered.</li>
+<li>Participants can register to participate on sub-tasks. </li>
+<li>For each sub-task, we will rank all participant teams seperately.</li>
+<li>The total scores for both tasks will be added up for each participant team to obtain a single final score used to pick the overall winning team.</li>
+<li>Participants will be allowed to use their own datasets for training. However, they must notify the organizers about this.</li>
+<li>Submissions will be done via e-mail. Participants will be required to submit the results of their systems in the expected JSON format. We might not consider submissions which do not conform to the correct file format.</li>
+<li> CODE submission will be required.</li>
+<li>Participants must provide a description of the methods used to produce the results submitted. In the final competition paper, we will summarize these descriptions when we describe the submitted systems. If external datasets were used, participants will also have to provide a full description of these. We reserve the right to disqualify submissions which do not provide a sufficiently detailed description of their system.</li>
+<li>To be fair to all participants, any deadline extensions given will apply to all participants, not just to individual research groups who might request them. </li>
+</ul>
+          </div>
+    </section>
+  </main>
+</div>
 <div class="wrapper row3"  style="background-color: whitesmoke;">
   <main class="hoc container clear">
     <section>
