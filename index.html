@@ -78,21 +78,30 @@
           <h5 class="heading">Dataset</h6>
             DocEdit dataset provides pairs of document images and user edit requests along with the ground truth edit command. Each edit request is mapped to an executable command that can be simulated in a real-world document editing software. We present 17K scanned PDF documents comprising edits performed on publicly available PDF documents. The dataset has a diverse mix of edit operations (add, delete, modify, split, merge, replace, move, copy) and reference types (direct, object referring, text referring) from the users.
         </p>
-       <h5 class="heading">Evaluation</h6>
+       <h5 class="heading">Evaluation Rules </h6>
         <p>
           On March, 2023, we will release the test datasets, and by March 15th, 2023 competition participants are expected submit the following:
           <br> 1. Predictions on each test dataset
           <br> 2. A short but complete system description
          <br> The organizers will tabulate the results for each task and present it at ICDAR 2023 in San Jose, California, USA . Note that you do not need to attend ICDAR 2023 to participate in this competition.
         </p>
-      
     <h5 class="heading">Tasks</h5>
         <p>
           <ul>
-              <li>Sub-task 1: Edit Command Generation: We will report exact match accuracy (EM %), Word overlap F1 and ROUGE score. We will also compare accuracy for action, component, attribute, initial state and final state tokens by matching the presence of tokens in ground truth prediction in predicted token sequence. </li>
-              <li>Sub-task 2: Bounding Box RoI prediction: We will evaluate bounding box prediction in terms of top-1 accuracy (%). Specifically, if the Jaccard overlap between the predicted region and the ground-truth box is above 0.5, the prediction is regarded correct.</li>
+              <li>Sub-task 1: Edit Command Generation: Input - document image to be edited and the user text request output; Output - ACTION (< Component >, < Attribute >, < Initial_State >, < Final_State >) </li>
+                <br> Action describes the executable function belonging to the following taxonomy - Add, Delete, Copy, Move, Replace, Split, Merge, Modify. It is followed by arguments corresponding to the document components to be edited, attributes to be modified, initial state of the attributes, and the final state of the attributes expected in the edited version.
+              <li>Sub-task 2: Bounding Box RoI prediction: Input - document image to be edited and the user text request output; Output - [x, y, h, w]</li>
+                <br> (x, y) refers to the top-left coordinate and (h, w) refer to the height and width of the bounding box
           </ul>
           <br>Each subtask is evaluated in isolation, meaning that systems have access to the ideal output (i.e. Ground Truth) of previous subtasks. 
+        </p>  
+    <h5 class="heading">Evaluation Metrics</h5>
+        <p>
+          <ul>
+              <li>Sub-task 1: Edit Command Generation: Exact match accuracy (EM %) and ROUGE score.</li>
+              <li>Sub-task 2: Bounding Box RoI prediction: Top-1 accuracy (%). (Jaccard overlap between the predicted region and the ground-truth > 0.5</li>
+          </ul>
+          <br>Each subtask is evaluated in isolation.
         </p>
 
     <h5 class="heading">Competition Rules</h5>
