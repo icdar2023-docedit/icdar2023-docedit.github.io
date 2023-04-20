@@ -76,33 +76,28 @@
         <h6 class="heading">Competition Outline</h6>
         <p>
           <h5 class="heading">Dataset</h6>
-            DocEdit dataset provides pairs of document images and user edit requests along with the ground truth edit command. Each edit request is mapped to an executable command that can be simulated in a real-world document editing software. We present 17K scanned PDF documents comprising edits performed on publicly available PDF documents. The dataset has a diverse mix of edit operations (add, delete, modify, split, merge, replace, move, copy) and reference types (direct, object referring, text referring) from the users.
+            DocEdit dataset provides pairs of document images and user edit requests along with the ground truth edit command. Each edit request is mapped to an executable command that can be simulated in a real-world document editing software. We present around 15K scanned PDF documents comprising edits performed on publicly available PDF documents. The dataset has a diverse mix of edit operations (add, delete, modify, split, merge, replace, move, copy) and reference types (direct, object referring, text referring) from the users.
         </p>
        <h5 class="heading">Evaluation Rules </h6>
         <p>
-          On March, 2023, we will release the test datasets, and by March 15th, 2023 competition participants are expected submit the following:
-          <br> 1. Predictions on each test dataset
-          <br> 2. A short but complete system description
-         <br> The organizers will tabulate the results for each task and present it at ICDAR 2023 in San Jose, California, USA . Note that you do not need to attend ICDAR 2023 to participate in this competition.
+          Participants will need to evaluate their approach on the test set, and will be expected to submit the following:
+          <br> 1. ID-wise predictions on the test set
+          <br> 2. A short and complete system description of the proposed approach
+         <br> The organizers will tabulate the results for each task and present it at ICDAR 2023 in San Jose, California, USA . 
+          <br>Note that you do not need to attend ICDAR 2023 to participate in this competition.
         </p>
     <h5 class="heading">Tasks</h5>
         <p>
           <ul>
-              <li>Sub-task 1: Edit Command Generation: Input - Document image and the user text request; Output - ACTION (< Component >, < Attribute >, < Initial_State >, < Final_State >) </li>
-                <br> Action describes the executable function belonging to the following taxonomy - Add, Delete, Copy, Move, Replace, Split, Merge, Modify. It is followed by arguments corresponding to the document components to be edited, attributes to be modified, initial state of the attributes, and the final state of the attributes expected in the edited version.
-              <li>Sub-task 2: Bounding Box RoI prediction: Input - Document image and the user text request; Output - [x, y, h, w]</li>
-                <br> (x, y) refers to the top-left coordinate and (h, w) refer to the height and width of the bounding box
+              <li>Edit Command Generation: Input - Document image and the user text request; Output - ACTION (< Component >, < Attribute >, < Initial_State >, < Final_State >) </li>
+                <br> Action describes the executable function belonging to the following taxonomy - Add, Delete, Copy, Move, Replace, Split, Merge, Modify. It is followed by arguments corresponding to the document components to be edited, attributes to be modified, initial state of the attributes, and the final state of the attributes expected in the edited version.   
           </ul>
-          <br>Each subtask is evaluated in isolation, meaning that systems have access to the ideal output (i.e. Ground Truth) of previous subtasks. 
         </p>  
     <h5 class="heading">Evaluation Metrics</h5>
         <p>
           <ul>
-              <li>Sub-task 1: Edit Command Generation: Exact match accuracy (EM %) and ROUGE score.</li>
-              <li>Sub-task 2: Bounding Box RoI prediction: Top-1 accuracy (%). 
-                <br>(Jaccard overlap between the predicted region and the ground-truth > 0.5)</li>
+              <li>Edit Command Generation: Exact match accuracy (EM %) and ROUGE score.</li>
           </ul>
-          <br>Each subtask is evaluated in isolation.
         </p>
 
     <h5 class="heading">Competition Rules</h5>
@@ -112,11 +107,10 @@
           <li>The competition is open for participants from both industry and academia as long as they comply with the dataset license which can be found along with the dataset. The competition is open for both students and professionals who want to make a contribution to the field of Document AI. </li>
           <li>Each participant team can include up to a maximum of 10 people from one or more affiliations. For the sake of fairness to smaller research groups, we will not allow bigger research groups to participate as a single team.</li>
           <li>Winners teams will have certificates listing the names of their members in the exact format and order as they were registered.</li>
-          <li>Participants can participate in one or more sub-tasks.</li>
-          <li>For each sub-task, we will rank all participant teams seperately.</li>
-          <li>The total scores for both tasks will be added up for each participant team to obtain a single final score used to pick the overall winning team.</li>
+          <li>Participants can participate in one or more tasks.</li>
+          <li>The total scores for the task will be used to obtain a single final score used to pick the overall winning team.</li>
           <li>Participants will be allowed to use their own datasets for training. However, they must notify the organizers about this.</li>
-         <li><b>Submissions</b> will be done via this ><a href="https://forms.gle/LeMLMQa3o3Pr8Za86">form</a>. Participants will be required to submit the results of their systems in the expected JSON format. We might not consider submissions which do not conform to the correct file format. You may email  docedit.icdar2023@gmail.com for queries.</li>
+         <li><b>Submissions</b> will be done via this ><a href="https://forms.gle/LeMLMQa3o3Pr8Za86">form</a>. Participants will be required to submit the results of their systems in the expected CSV format. We might not consider submissions which do not conform to the correct file format. You may email  docedit.icdar2023@gmail.com for queries.</li>
           <li>Winners will be required to submit their code to verify the output. </li>
           <li>Participants must provide a description of the methods used to produce the results submitted. In the final competition paper, we will summarize these descriptions when we describe the submitted systems. If external datasets were used, participants will also have to provide a full description of these. We reserve the right to disqualify submissions which do not provide a sufficiently detailed description of their system.</li>
           <li>To be fair to all participants, any deadline extensions given will apply to all participants, not just to individual research groups who might request them. </li>
@@ -125,13 +119,8 @@
         <table>
           <tr>
             <td>Command Generation</td>
-            <td><a href="index.html">Training</a></td>
-            <td><a href="index.html">Eval</a></td>
-          </tr>
-          <tr>
-            <td>RoI Bounding Box</td>
-            <td><a href="index.html">Training</a></td>
-            <td><a href="index.html">Eval</a></td>
+            <td><a href="https://github.com/adobe-research/DocEdit-Dataset/releases/tag/v1.0">Training</a></td>
+            <td><a href="index.html">Eval (TBD)</a></td>
           </tr>
         </table>
           </div>
@@ -145,10 +134,10 @@
         <h6 id="important-date" class="heading">Important dates</h6>
         <ul>
           <li>DocEdit is accepted at ICDAR 2023: January 2023</li>
-          <li>DocEdit website is launched: March 10, 2023</li>
+          <li>DocEdit website is launched: March, 2023</li>
           <li>DocEdit is open for submission: March 15, 2023</li>
-          <li>Submission deadline: April 10, 2023</li>
-          <li>Winners Announced: April 12, 2023</li>
+          <li>Submission deadline: April 25, 2023</li>
+          <li>Winners Announced: April 30, 2023</li>
           <li><strong>DocEdit competition at ICDAR 2023:</strong> Aug 21-26, 2023</li>
         </ul>
         <p>All deadlines are end of day, anywhere on earth (UTC-12).</p>
@@ -176,28 +165,6 @@
   </main>
 </div>
 
-
-<!-- <div class="wrapper row3"  style="background-color: lightgray;">
-  <main class="hoc container clear">
-    <section>
-      <div>
-        <h6 id="organizer" class="heading">Program Committee</h6>
-        <ul>
-          
-          <li>Miguel Villarreal-Vasquez, JP Morgan AI</li>
-          <li>Yao Xuan, Meta</li>       
-          <li>Mihir Goyal, Sharechat</li>
-          <li>Sreyan Ghosh, University of Maryland College Park</li>
-          <li>Shishira Maiya, University of Maryland College Park</li>
-          <li>Yow-Ting Shiue, University of Maryland College Park</li>
-          <li>Apoorv Singh, Motional</li>
-          <li>Vineet Malhotra, MIDAS IIIT Delhi</li>
-          
-        </ul>
-      </div>
-    </section>
-  </main>
-</div> -->
   
 <div class="wrapper row3"  style="background-color: midnightblue;">
   <main class="hoc container clear">
